@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essentials(エッセンシャルズ)簡易日本語ガイド</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '⛏️';
+            font-size: 60px;
+            position: absolute;
+            top: 10px;
+            left: 30px;
+            opacity: 0.3;
+        }
+
+        header::after {
+            content: '🔧';
+            font-size: 60px;
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .nav {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            border-bottom: 3px solid #e9ecef;
+        }
+
+        .nav h2 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #495057;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: white;
+            color: #3a7bd5;
+            text-decoration: none;
+            border-radius: 20px;
+            border: 2px solid #3a7bd5;
+            transition: all 0.3s;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .nav-link:hover {
+            background: #3a7bd5;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(58, 123, 213, 0.3);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            border: 3px solid #e9ecef;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            font-size: 1.6em;
+            font-weight: bold;
+            border-bottom: 4px solid #5568d3;
+        }
+
+        .section-content {
+            padding: 25px;
+            background: #fafbfc;
+        }
+
+        .item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .item-title::before {
+            content: '◆';
+            margin-right: 8px;
+            color: #764ba2;
+        }
+
+        .item-description {
+            color: #495057;
+            margin-bottom: 8px;
+        }
+
+        .item-note {
+            color: #6c757d;
+            font-size: 0.95em;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .recipe {
+            background: #fff3cd;
+            border: 2px dashed #ffc107;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: #856404;
+        }
+
+        .recipe::before {
+            content: '📝 レシピ: ';
+            font-weight: bold;
+        }
+
+        .special-note {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #155724;
+        }
+
+        .ore-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .ore-table th,
+        .ore-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .ore-table th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        .ore-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ore-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .warning {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 6px;
+            color: #721c24;
+        }
+
+        .warning::before {
+            content: '⚠️ ';
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section-header {
+                font-size: 1.3em;
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-link {
+                text-align: center;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .scroll-top:hover {
+            background: #764ba2;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Essentials(エッセンシャルズ)</h1>
+            <p class="subtitle">簡易日本語ガイド</p>
+        </header>
+
+        <nav class="nav">
+            <h2>📖 目次</h2>
+            <div class="nav-links">
+                <a href="#timesave" class="nav-link">⏱️ 時短系</a>
+                <a href="#tools" class="nav-link">🔧 ツール系</a>
+                <a href="#inventory" class="nav-link">🎒 インベントリ・ストレージ系</a>
+                <a href="#blocks" class="nav-link">🧱 追加ブロック</a>
+                <a href="#multiplayer" class="nav-link">👥 マルチプレイ系</a>
+                <a href="#recipes" class="nav-link">📜 レシピ追加・変更</a>
+            </div>
+        </nav>
+
+        <div class="content">
+            <section id="timesave" class="section">
+                <div class="section-header">⏱️ 時短系</div>
+                <div class="section-content">
+                    <div class="item">
+                        <div class="item-title">鉱石連鎖破壊</div>
+                        <div class="item-description">鉱石を破壊すると、周りの同種の鉱石も破壊します。</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">原木連鎖破壊</div>
+                        <div class="item-description">原木を破壊すると、周りの原木も破壊します。</div>
+                        <div class="warning">建築での事故に注意。</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">自動植え付け</div>
+                        <div class="item-description">インベントリに種がある場合、作物を壊した時に自動で植え付けします。</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">作物一括刈り取り</div>
+                        <div class="item-description">育ち切った作物をクワで壊すと、一括で刈り取ることができます。</div>
+                        <div class="item-note">種を持っている場合、同時に植え付けもします。</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tools" class="section">
+                <div class="section-header">🔧 ツール系</div>
+                <div class="section-content">
+                    <div class="item">
+                        <div class="item-title">パクセル</div>
+                        <div class="item-description">同素材のツルハシ/斧/シャベルをクラフトすると、これらの機能+クワの機能を持ったツール、「パクセル」が作れます。</div>
+                        <div class="item-note">スニークしながら土を右クリックで、道ブロックを作れます。</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">大鎌</div>
+                        <div class="item-description">周囲の草/花/落ち葉などを刈り取れるツールです。</div>
+                        <div class="recipe">各種ツール素材x2、棒x3</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">マグネット</div>
+                        <div class="item-description">アイテムを拾う範囲が広がるアイテムです。</div>
+                        <div class="item-note">インベントリに所持しているだけで効果を発揮します。</div>
+                        <div class="recipe">鉄x2、レッドストーンx2、スライムボールx1</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">寝袋</div>
+                        <div class="item-description">リスポーン地点を更新せずに寝ることができるアイテムです。</div>
+                        <div class="recipe">羊毛x3</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">懐中電灯</div>
+                        <div class="item-description">手に持つと前方を照らすことができるアイテムです。</div>
+                        <div class="recipe">グロウストーンブロックx1、黄色の染料x4、鉄インゴットx2</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">作業用ヘルメット</div>
+                        <div class="item-description">頭に装着する懐中電灯です。</div>
+                        <div class="recipe">グロウストーンブロックx1、黄色の染料x2、鉄インゴットx5</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">賄賂</div>
+                        <div class="item-description">村人の取引をすぐに補充するアイテムです。</div>
+                        <div class="item-description">何回でも使えるらしいです。恐ろしい。</div>
+                        <div class="recipe">エメラルドx4、金インゴットx4、ダイヤモンドx1</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">エアボンベ</div>
+                        <div class="item-description">水中で使うと、呼吸ゲージを満タンまで回復します。</div>
+                        <div class="item-note">大小の2種類の大きさがあり、小は2回、大は10回使えます。</div>
+                        <div class="item-note">地上で右クリックすると空気を補充できます。</div>
+                        <div class="recipe">革x3(7)、木製のボタンx1</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">チェックポイント</div>
+                        <div class="item-description">チェックポイントを作成し、テレポートできるようにするアイテムです。</div>
+                        <div class="item-note">手に持って使用すると、立っている場所を登録する/登録したチェックポイントにテレポートすることができます。</div>
+                        <div class="recipe">ダイヤモンドx4、エンダーパールx4、探検家のコンパスx1</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">鉱石スキャナー</div>
+                        <div class="item-description">見ている方向の30ブロック先までにある鉱石を検知し、ハイライト表示します。</div>
+                        <div class="item-note">銅/金/ダイヤモンド/古代の残骸 製のものがあり、それぞれ検知できる鉱石が異なります。</div>
+                        <table class="ore-table">
+                            <thead>
+                                <tr>
+                                    <th>スキャナー素材</th>
+                                    <th>検知できる鉱石</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>銅</td>
+                                    <td>石炭/銅/レッドストーン</td>
+                                </tr>
+                                <tr>
+                                    <td>金</td>
+                                    <td>鉄/金/クォーツ</td>
+                                </tr>
+                                <tr>
+                                    <td>ダイヤモンド</td>
+                                    <td>エメラルド/ダイヤモンド/ラピスラズリ</td>
+                                </tr>
+                                <tr>
+                                    <td>古代の残骸</td>
+                                    <td>古代の残骸</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">空のキャプチャキューブ</div>
+                        <div class="item-description">モブを捕獲し、再使用すると召喚します。</div>
+                        <div class="recipe">黒曜石x4、鉄x4、エンダーアイx1</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">スーパースポンジ</div>
+                        <div class="item-description">使用すると、周囲の水を吸収します。</div>
+                        <div class="item-note">吸収範囲はスポンジよりも広く、20回使用できます。</div>
+                        <div class="item-note">また、かまどで乾燥させ、再使用できます。</div>
+                        <div class="recipe">スポンジx1、ブレイズパウダーx2、ファイヤーチャージx2</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="inventory" class="section">
+                <div class="section-header">🎒 インベントリ・ストレージ系</div>
+                <div class="section-content">
+                    <div class="item">
+                        <div class="item-title">サッチェル</div>
+                        <div class="item-description">1つのアイテムをほぼ無限に保管できるアイテムです。</div>
+                        <div class="item-note">手に持って右クリックで起動、次に登録したいアイテムを右クリックで使用します。</div>
+                        <div class="recipe">バンドルx5、糸x3、エンダーアイx1</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">XPサッチェル</div>
+                        <div class="item-description">経験値の保存と取り出しができるアイテムです。</div>
+                        <div class="item-note">右クリックで保存、スニークしながら右クリックで取り出しができます。</div>
+                        <div class="recipe">バンドルx5、糸x3、ラピスラズリx1</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">ポータブル金床/ボート/作業台/かまど/エンダーチェスト</div>
+                        <div class="item-description">対象物を召喚するリモコンのようなアイテムです。</div>
+                        <div class="item-note">召喚すると、前に出していた対象物は消えます。</div>
+                        <div class="item-note">また、スニークしながら使用/叩く/離れる かしても消えます。</div>
+                        <div class="recipe">対象物x4</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">ディスエンチャンター</div>
+                        <div class="item-description">ツールについたエンチャントを抽出し、エンチャント本に変換するアイテムです。</div>
+                        <div class="item-note">手に持って右クリックし、その後使いたいツールを持って右クリックすると使用します。</div>
+                        <div class="recipe">黒曜石x4、ラピスラズリx4、エンダーアイx1</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">大容量バケツ</div>
+                        <div class="item-description">水、溶岩を5回分回収できるバケツです。</div>
+                        <div class="recipe">バケツx5</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">ソートスティック</div>
+                        <div class="item-description">インベントリやチェストの中身をABC順にソートするアイテムです。</div>
+                        <div class="item-note">インベントリに使用する場合は右クリック、チェストには左クリックで使用します。</div>
+                        <div class="recipe">ダイヤモンドx1、金塊x4、棒x2</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">焼却炉</div>
+                        <div class="item-description">選択したアイテムをインベントリから削除します。</div>
+                        <div class="recipe">鉄インゴットx4、石のボタンx4、溶岩バケツx1</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="blocks" class="section">
+                <div class="section-header">🧱 追加ブロック</div>
+                <div class="section-content">
+                    <div class="item">
+                        <div class="item-title">ワールドアンカー</div>
+                        <div class="item-description">設置した場所を中心に、半径10/20/30/40ブロックの範囲内のチャンクを常時読み込ませます。</div>
+                        <div class="special-note">ワールドに最大10個まで。</div>
+                        <div class="recipe">海洋の心x1、ダイヤモンドブロックx4</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">エレベーター</div>
+                        <div class="item-description">上に乗った状態でジャンプすると、同X,Z座標の上にある同ブロックに移動、スニークすると、同X,Z座標の下にある同ブロックに移動するブロックです。</div>
+                        <div class="recipe">足場x1、エンダーパールx4</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">新ハーフブロック</div>
+                        <div class="item-description">テラコッタ系、コンクリート系、土、砂、草、砂利のハーフブロックが追加されました。</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">縦ハーフブロック</div>
+                        <div class="item-description">対応した素材x3で、縦向きのハーフブロックが作成可能です。</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">フェイクブロック</div>
+                        <div class="item-description">エンティティが通り抜けられる、見た目だけのブロックです。</div>
+                        <div class="item-note">モブはこれを床/壁として認識します。</div>
+                        <div class="recipe">対応したブロックx5</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="multiplayer" class="section">
+                <div class="section-header">👥 マルチプレイ系</div>
+                <div class="section-content">
+                    <div class="item">
+                        <div class="item-title">チェストキー</div>
+                        <div class="item-description">チェストに鍵をかけて、他の人が干渉できなくするアイテムです。</div>
+                        <div class="item-note">チェストに向けて右クリックで使用します。また、チェストを破壊不能にします。</div>
+                        <div class="recipe">金のインゴットx3、金塊x2</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">ギフトボックス</div>
+                        <div class="item-description">アイテムをメッセージ付きで梱包できるアイテムです。</div>
+                        <div class="recipe">紙x4、赤の染料x4、チェストx1</div>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-title">プレイヤーテレポーター</div>
+                        <div class="item-description">使用すると、プレイヤーを選択し、そこにテレポートできます。</div>
+                        <div class="special-note">しかし、相手側が3秒間スニークして応答しないといけません。</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recipes" class="section">
+                <div class="section-header">📜 レシピ追加・変更</div>
+                <div class="section-content">
+                    <div class="item">
+                        <div class="item-title">革のレシピ</div>
+                        <div class="item-description">腐った肉を燻製機で加工すると、革になります。</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>💡 これらの他にも追加されているブロック/ツールがありますが、サバイバルにおいて重要度が低いと判断し、載せていないものがあります。</p>
+            <p style="margin-top: 20px; opacity: 0.8;">Essentials Addon Guide for Minecraft Bedrock Edition</p>
+        </footer>
+    </div>
+
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script>
+        // スクロールトップボタンの表示制御
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
